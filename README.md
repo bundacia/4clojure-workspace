@@ -1,14 +1,41 @@
-# four-clojure
+# four-clojure-workspace
 
-A Clojure library designed to ... well, that part is up to you.
+A workspace for hackiong on four-clojure problems
 
 ## Usage
 
-FIXME
+```
+lein build-problem-file $problem-id
+```
+
+Use the build-problem-file lein task to pull the given problem from the
+4clojure site and create a stubbed out cliojure file with the tests and a place
+for you to write your solution.
+
+For example...
+
+```
+lein build-problem-file 1
+```
+
+Will write this content to `src/four-clojure/p1.clj`
+
+```clojure
+; Nothing but the Truth: http://www.4clojure.com//api/problem/1
+
+(ns four-clojure.p1
+  (:require [clojure.test :refer :all]))
+
+(with-test
+
+  (def answer
+    ; --> your code here <---
+  )
+
+(is (= answer true)))
+```
 
 ## License
 
-Copyright © 2015 FIXME
+TODO
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
