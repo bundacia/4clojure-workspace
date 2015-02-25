@@ -1,11 +1,11 @@
-(ns four-clojure.build
+(ns leiningen.build-problem-file
   (:require [clj-http.client :as http]
             [clojure.string :as str]
             [clojure.data.json :as json]))
 
 (def base_url "http://www.4clojure.com/")
 
-(defn get
+(defn get-url
   [url]
   (:body (http/get url {:insecure? true})))
 
@@ -21,14 +21,12 @@
   [id]
   (merge
     {"id" id "url" (problem-url id)}
-    (parse (get (problem-url id)))))
+    (parse (get-url (problem-url id)))))
 
 (defn problem-file-template
  [params]
  (str/join [
-"; " (params "url") "
-; " (params "title") ":
-; " (params "description") "
+"; " (params "title") ": " (params "url") "
 
 (ns four-clojure.p" (params "id") "
   (:require [clojure.test :refer :all]))
@@ -52,9 +50,10 @@
   [id]
   (problem-file-template (problem-data id)))
 
-(defn build
-  [id]
-  (let [content (problem-file-str id)]
-    (with-open [w (clojure.java.io/writer (str/join ["src/four_clojure/p" id ".clj"]))]
+(defn build-problem-file
+  [project id]
+  (let [content (problem-file-str id)
+        file_name (str/join ["src/four_clojure/p" id ".clj"])]
+    (with-open [w (clojure.java.io/writer file_name)]
       (.write w content)
-      (println "Success!"))))
+      (println file_name))))
