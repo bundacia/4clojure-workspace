@@ -23,10 +23,10 @@
     {"id" id "url" (problem-url id)}
     (parse (get (problem-url id)))))
 
-(defn problem-file-str
+(defn problem-file-template
  [params]
-  (println (str/join ["
-; " (params "url") "
+ (str/join [
+"; " (params "url") "
 ; " (params "title") ":
 ; " (params "description") "
 
@@ -45,7 +45,16 @@
   "__"
   "answer" 
   )
-"
+")"
+]))
 
-)
-"])))
+(defn problem-file-str
+  [id]
+  (problem-file-template (problem-data id)))
+
+(defn build
+  [id]
+  (let [content (problem-file-str id)]
+    (with-open [w (clojure.java.io/writer (str/join ["src/four_clojure/p" id ".clj"]))]
+      (.write w content)
+      (println "Success!"))))
