@@ -52,8 +52,6 @@
 
 (defn build-problem-file
   [project id]
-  (let [content (problem-file-str id)
-        file_name (str/join ["src/four_clojure/p" id ".clj"])]
-    (with-open [w (clojure.java.io/writer file_name)]
-      (.write w content)
-      (println file_name))))
+  (let [file_name (str/join ["src/four_clojure/p" id ".clj"])]
+    (spit file_name (problem-file-str id))
+    (println file_name)))
