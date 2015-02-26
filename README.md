@@ -1,6 +1,6 @@
 # four-clojure-workspace
 
-A workspace for hackiong on four-clojure problems
+A workspace for hacking on four-clojure problems
 
 ## Usage
 
