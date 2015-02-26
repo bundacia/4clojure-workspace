@@ -1,4 +1,4 @@
-(ns four-clojure.p54
+(ns four-clojure-workspace.p54
   (:require [clojure.test :refer :all]))
 
 (with-test

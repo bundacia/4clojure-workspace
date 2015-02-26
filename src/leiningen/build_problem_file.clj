@@ -3,7 +3,7 @@
             [clojure.string :as str]
             [clojure.data.json :as json]))
 
-(def base_url "http://www.4clojure.com/")
+(def base_url "http://www.4clojure.com")
 
 (defn get-url
   [url]
@@ -28,7 +28,7 @@
  (str/join [
 "; " (params "title") ": " (params "url") "
 
-(ns four-clojure.p" (params "id") "
+(ns four-clojure-workspace.p" (params "id") "
   (:require [clojure.test :refer :all]))
 
 (with-test

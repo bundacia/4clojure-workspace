@@ -1,4 +1,4 @@
-(defproject four-clojure "0.1.0-SNAPSHOT"
+(defproject four-clojure-workspace "0.1.0-SNAPSHOT"
   :eval-in-leiningen true
   :description "FIXME: write description"
   :url "http://example.com/FIXME"

@@ -4,11 +4,7 @@ A workspace for hackiong on four-clojure problems
 
 ## Usage
 
-```
-lein build-problem-file $problem-id
-```
-
-Use the build-problem-file lein task to pull the given problem from the
+Use the `build-problem-file` lein task to pull the given problem from the
 4clojure site and create a stubbed out cliojure file with the tests and a place
 for you to write your solution.
 
@@ -18,12 +14,12 @@ For example...
 lein build-problem-file 1
 ```
 
-Will write this content to `src/four-clojure/p1.clj`
+Will write this content to `src/four-clojure-workspace/p1.clj`
 
 ```clojure
-; Nothing but the Truth: http://www.4clojure.com//api/problem/1
+; Nothing but the Truth: http://www.4clojure.com/api/problem/1
 
-(ns four-clojure.p1
+(ns four-clojure-workspace.p1
   (:require [clojure.test :refer :all]))
 
 (with-test
