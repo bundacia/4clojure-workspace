@@ -52,6 +52,6 @@
 
 (defn build-problem-file
   [project id]
-  (let [file_name (str/join ["src/four_clojure/p" id ".clj"])]
+  (let [file_name (str/join ["src/four_clojure_workspace/p" id ".clj"])]
     (spit file_name (problem-file-str id))
     (println file_name)))

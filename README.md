@@ -14,7 +14,7 @@ For example...
 lein build-problem-file 1
 ```
 
-Will write this content to `src/four-clojure-workspace/p1.clj`
+Will write this content to `src/four_clojure_workspace/p1.clj`
 
 ```clojure
 ; Nothing but the Truth: http://www.4clojure.com/api/problem/1
